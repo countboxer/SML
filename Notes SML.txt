@@ -1,0 +1,74 @@
+- OS.FileSys.getDir();
+val it = "C:\\WINDOWS\\system32" : string
+- OS.FileSys.chDir("C:/Users/count/Documents/SML");
+val it = () : unit
+- OS.FileSys.getDir();
+val it = "C:\\Users\\count\\Documents\\SML" : string
+
+- use "module_test.sml";
+[opening module_test.sml]
+- Modules.favouriteNum();
+My favourite number is 7
+val it = () : unit
+
+(* Standard ML has six data types built in: unit, bool, int, real, string, and char. *)
+(* Standard ML has three data structure built in: tuple "()", list "[]", records *)
+- val i = 5;
+val i = 5 : int
+- val j = 5.0;
+val j = 5.0 : real
+- val k = "Hello, world!";
+val k = "Hello, world!" : string
+- val a = true;
+val a = true : bool
+- val b = #"z";
+val b = #"z" : char
+- val c = ();
+val c = () : unit
+
+- let
+=     val x = 4
+=     val y = 6
+=     in x * y
+= end;
+val it = 24 : int
+
+- val t = (1, 2, 3, 4);
+val t = (1,2,3,4) : int * int * int * int
+- val t2 : (int * int * int * int) = (1, 3, 5, 7);
+val t2 = (1,3,5,7) : int * int * int * int
+
+- val l1 = [1, 2, 3, 4];
+val l1 = [1,2,3,4] : int list
+- val l2 = [1.0, 2.0, 3.0];
+val l2 = [1.0,2.0,3.0] : real list
+
+- val r: {name: string, occupation: string, age: int} =
+=   {name = "Mickey Mouse", occupation="engineer", age=5};
+val r = {age=5,name="Mickey Mouse",occupation="engineer"}
+  : {age:int, name:string, occupation:string}
+- #occupation r;
+val it = "engineer" : string
+- #age r;
+val it = 5 : int
+
+- fun inc x = x + 1;
+val inc = fn : int -> int
+- inc(4);
+val it = 5 : int
+
+- fun mul (x: int, y: int) = x * y;
+val mul = fn : int * int -> int
+- mul(4, 5);
+val it = 20 : int
+
+- fun divmod (x: int, y: int): (int * int) = (x div y, x mod y);
+val divmod = fn : int * int -> int * int
+- divmod(10, 3);
+val it = (3,1) : int * int
+- val x = divmod(10, 3);
+val x = (3,1) : int * int
+- #1 x;
+val it = 3 : int
+- #2 x;
+val it = 1 : int
